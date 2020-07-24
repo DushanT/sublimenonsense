@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Sublimenonsense" keywords={[`sublime`, `nonsense`, `sublimenonsense`]} />
-    <h1>Hello</h1>
+    <h1>Hi hello ahoj</h1>
     <Link to="/go-back/">Go</Link>
   </Layout>
 )
