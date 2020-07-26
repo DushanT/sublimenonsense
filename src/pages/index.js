@@ -1,15 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Sublimenonsense" keywords={[`sublime`, `nonsense`, `sublimenonsense`]} />
-    <h1>Hi hello ahoj</h1>
-    <Link to="/go-back/">Go</Link>
-  </Layout>
-)
+export default function Home({ data }) {
+  return (
+    <Layout>
+      <SEO
+        title="Sublimenonsense"
+        keywords={[`sublime`, `nonsense`, `sublimenonsense`, `projects`]}
+      />
+      <Link to="/songs/">Songs</Link>
+    </Layout>
+  )
+}
 
-export default IndexPage
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___band] }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            band
+            title
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
