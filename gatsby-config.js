@@ -1,18 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Sublimenonsense`,
+    title: `snons`,
     description: `Everything and nothing you've been looking for on the internet`,
-    author: `@dushanT`,
+    author: `@sublimenonsense`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `src`,
+        path: `${__dirname}/src`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
