@@ -16,8 +16,8 @@ export default function Songs({ data }) {
           songs.reduce(
             (acc, curr) => ({
               ...acc,
-              [curr.node.context.band]: [
-                ...(acc?.[curr.node.context.band] ?? []),
+              [curr?.node?.context?.band ?? 'Unknown']: [
+                ...(acc?.[curr?.node?.context?.band] ?? []),
                 { ...curr.node },
               ],
             }),
